@@ -14,8 +14,8 @@ const Form = () => {
   } = useForm({
     mode: "onBlur",
     defaultValues: {
-      user: [{}],
-      sub: [{}],
+      user: [{ type: "user" }],
+      sub: [{ type: "sub" }],
     },
   });
 
@@ -46,7 +46,9 @@ const Form = () => {
         <button
           type="button"
           onClick={() => {
-            userAppend({});
+            userAppend({
+              type: "user",
+            });
           }}
         >
           인원 추가
@@ -63,7 +65,9 @@ const Form = () => {
         <button
           type="button"
           onClick={() => {
-            subAppend({});
+            subAppend({
+              type: "sub",
+            });
           }}
         >
           서브 추가
