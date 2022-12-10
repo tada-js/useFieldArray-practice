@@ -37,7 +37,15 @@
   }
 }
 
-.row {
+form {
+  border: 1px solid red;
   display: flex;
-  padding: 2rem 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-wrap {
+  width: 300px;
+  border: 1px solid blue;
 }
