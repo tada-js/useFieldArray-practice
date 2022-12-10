@@ -1,3 +1,14 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+}
+
 .App {
   text-align: center;
 }
@@ -37,15 +48,14 @@
   }
 }
 
-form {
-  border: 1px solid red;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.row-wrap {
+  width: 20%;
 }
 
-.row-wrap {
-  width: 300px;
-  border: 1px solid blue;
+.error-message {
+  color: #f00;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 600;
 }
