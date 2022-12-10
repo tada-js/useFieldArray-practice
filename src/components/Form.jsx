@@ -14,22 +14,8 @@ const Form = () => {
   } = useForm({
     mode: "onBlur",
     defaultValues: {
-      user: [
-        {
-          type: "user",
-          userName: "userName",
-          userEmail: "userEmail",
-          userId: "userId",
-        },
-      ],
-      sub: [
-        {
-          type: "sub",
-          subInputValue: "subInputValue",
-          subSelectValue: "subSelectValue",
-          subCheckBoxValue: "subCheckBoxValue",
-        },
-      ],
+      user: [{}],
+      sub: [{}],
     },
   });
 
@@ -49,6 +35,8 @@ const Form = () => {
     } catch (error) {
       console.log(error);
     }
+
+    console.log(data);
   };
 
   return (
@@ -58,12 +46,7 @@ const Form = () => {
         <button
           type="button"
           onClick={() => {
-            userAppend({
-              type: "user",
-              userName: "userName",
-              userEmail: "userEmail",
-              userId: "userId",
-            });
+            userAppend({});
           }}
         >
           인원 추가
@@ -71,19 +54,16 @@ const Form = () => {
 
         <div className="row-wrap">
           {userFields.map((value, index) => {
-            return <UserInput />;
+            return (
+              <UserInput register={register} index={index} errors={errors} />
+            );
           })}
         </div>
 
         <button
           type="button"
           onClick={() => {
-            subAppend({
-              type: "sub",
-              subInputValue: "subInputValue",
-              subSelectValue: "subSelectValue",
-              subCheckBoxValue: "subCheckBoxValue",
-            });
+            subAppend({});
           }}
         >
           서브 추가
