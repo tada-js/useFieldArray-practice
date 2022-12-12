@@ -4,6 +4,8 @@ import SubSelect from "./SubSelect";
 import UserInput from "./UserInput";
 
 const Form = () => {
+  const parse = require("html-react-parser");
+
   // react hook form
   const {
     register,
@@ -12,7 +14,7 @@ const Form = () => {
     watch,
     formState: { errors },
   } = useForm({
-    mode: "onBlur",
+    mode: "onChange",
     defaultValues: {
       user: [{ type: "user" }],
       sub: [{ type: "sub" }],
@@ -37,6 +39,7 @@ const Form = () => {
     }
 
     console.log(data);
+    document.write(JSON.stringify(data));
   };
 
   return (

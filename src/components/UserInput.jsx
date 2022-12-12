@@ -1,20 +1,18 @@
 const UserInput = ({ register, index, errors }) => {
+  let count = index + 1;
   return (
     <>
-      <strong>이름</strong>
+      <strong>이름{count}</strong>
       <input
         type="text"
         {...register(`user.${index}.userName`, {
           required: "* 필수 입력입니다.",
         })}
       />
-      {errors.user && (
-        <div className="error-message">
-          {errors?.user[index].userName.message}
-        </div>
-      )}
-      {errors.user && console.log(errors.user)}
-      <strong>메시지</strong>
+      <div className="error-message">
+        {errors.user?.[index]?.userName?.message}
+      </div>
+      <strong>메시지{count}</strong>
       <input type="text" {...register(`user.${index}.userMessage`)} />
     </>
   );
