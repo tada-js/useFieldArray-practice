@@ -4,8 +4,6 @@ import SubSelect from "./SubSelect";
 import UserInput from "./UserInput";
 
 const Form = () => {
-  const parse = require("html-react-parser");
-
   // react hook form
   const {
     register,
